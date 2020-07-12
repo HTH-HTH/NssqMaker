@@ -1,3 +1,4 @@
+//
 let sta_make = () => {
   let nssq_status = {
     'プリンセス': {
