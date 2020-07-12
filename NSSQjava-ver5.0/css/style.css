@@ -1,0 +1,83 @@
+* {
+  /*マージンとかの初期値*/
+  margin: 1px;
+  padding: 0;
+}
+
+/*marginやpaddingの順番は　上・右・下・左*/
+body {
+  background-color: #e8ffc9;
+  margin: 10px 0px 10px 10px;
+  min-width: 1100px;/*折り返しによるレイアウト崩れ防止*/
+  /*zoom: 80%; */
+}
+
+/*---------divによるブロックわけ------------*/
+.float1 {
+  float: left;
+}
+
+.float2 {
+  float: left;
+}
+
+.cb {
+  /* floatを解除  float3より後ろにいくと思うようにいかない*/
+  clear: both;
+}
+
+.float3 {
+  float: left;
+  padding: 10px 10px 0px 0px;
+}
+
+.float4 {
+  float: left;
+  padding: 0px 10px 15px 0px;
+  /*上30pxの余白で無理やり高さをあわせてるので要改善*/
+}
+
+/*---------------------*/
+th {
+  background-color: #c3efab;
+}
+
+.info {
+  /*<table class="info"> */
+  border-collapse: collapse;
+  /*table専用　ボーダー線を２→１本に*/
+}
+
+.info th, .info td {
+  padding: 2px 5px 2px 5px;
+  /*テーブルの各ボックスサイズ*/
+  border: 1px solid #bec2c7;
+}
+
+input[type="number"] {
+  width: 115px;
+}
+
+input, select {
+  width: 120px;
+}
+
+#copy_button {
+  padding: 0px 5px 0px 5px;
+  /*ボタンサイズ*/
+  margin: 10px 10px 2px 0px;
+  /*他要素との隙間*/
+}
+
+#dice_button {
+  padding: 2px 10px 2px 10px;
+}
+
+#dice_list {
+  border: 0px 0px 0px 0px;
+  font-size: 22px;
+}
+
+footer {
+  text-align: right;
+}
