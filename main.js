@@ -24,7 +24,8 @@ let w_forge = ['STR+1', 'TEC+1', 'VIT+1', 'AGI+1', 'LUC+1',
 let a_forge = ['STR+1', 'TEC+1', 'VIT+1', 'AGI+1', 'LUC+1',
   '防御+1', '速度+2', '炎耐性+1', '氷耐性+1', '雷耐性+1'
 ]
-
+let sta_list = ["str", "tec", "vit", "agi", "luc"]
+let equip_list = ["weapon", "armor", "other"]
 /*.append()　は挿入した後に値が残らないので素材を各個作成しています。*/
 
 /*ジョブ（職業）*/
@@ -52,6 +53,60 @@ let job_list_create = () => {
     sub_job_list.append(option2)
   };
 };
+//レベル
+let level_create = () => {
+  for (let i = 1; i <= 99; i++) {
+    let level_option = document.createElement("option")
+    level_option.value = i;
+    level_option.text = i;
+
+    document.getElementById("level");
+    level.append(level_option)
+  };
+};
+/*ステ才能値５種*/
+let talent_create = () => {
+  for (let i = 0; i <= 4; i++) {
+    for (let j = 3; j <= 18; j++) {
+      let talent_option = document.createElement("option")
+      talent_option.value = j;
+      talent_option.text = j;
+      if (j == 10) {
+        /*selected(初期値)属性追加できるようになったら使いたい*/
+      };
+
+      talent_get = document.getElementById(sta_list[i] + "_talent");
+      talent_get.append(talent_option)
+    };
+  };
+};
+/*ステ成長値５種*/
+let grow_create = () => {
+  for (let i = 0; i <= 4; i++) {
+    for (let j = 0; j <= 99; j++) {
+      let grow_option = document.createElement("option")
+      grow_option.value = j;
+      grow_option.text = j;
+
+      grow_get = document.getElementById(sta_list[i] + "_grow");
+      grow_get.append(grow_option)
+    };
+  };
+};
+/*装備ランク*/
+let rank_create = () => {
+  for (let i = 0; i <= 2; i++) {
+    for (let j = 1; j <= 99; j++) {
+      let rank_option = document.createElement("option")
+      rank_option.value = j;
+      rank_option.text = j;
+
+      rank_get = document.getElementById(equip_list[i] + "_rank");
+      rank_get.append(rank_option)
+    };
+  };
+};
+
 
 /*武器*/
 let w_list_create = () => {
@@ -140,6 +195,10 @@ let a_forge_list_create = () => {
   };
 };
 job_list_create();
+level_create();
+talent_create();
+grow_create();
+rank_create();
 w_list_create();
 o_list_create();
 w_forge_list_create();

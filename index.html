@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja" dir="ltr">
+
 <head>
   <title>NSSQステータス計算機</title>
   <meta charset="utf-8">
@@ -27,7 +28,10 @@
     <table class="info">
       <tr>
         <th>レベル</th>
-        <td><input type="number" id="level" value="1" min="1" max="99" onChange="sta_make();"></td>
+        <td>
+          <select id="level" onChange="sta_make();">
+          </select>
+        </td>
       </tr>
       <tr>
 
@@ -42,37 +46,38 @@
 
       <tr>
         <th>STR才能</th>
-        <td><input type="number" id="str_talent" value="10" min="3" max="18" onChange="sta_make();"></td>
+        <td><select id="str_talent" onChange="sta_make();"></select></td>
+
         <th>STR成長</th>
-        <td><input type="number" id="str_grow" value="0" min="0" max="99" onChange="sta_make();"></td>
+        <td><select id="str_grow" onChange="sta_make();"></select></td>
       </tr>
 
       <tr>
         <th>TEC才能</th>
-        <td><input type="number" id="tec_talent" value="10" min="3" max="18" onChange="sta_make();"></td>
+        <td><select id="tec_talent" onChange="sta_make();"></select></td>
         <th>TEC成長</th>
-        <td><input type="number" id="tec_grow" value="0" min="0" max="99" onChange="sta_make();"></td>
+        <td><select id="tec_grow" onChange="sta_make();"></select></td>
       </tr>
 
       <tr>
         <th>VIT才能</th>
-        <td><input type="number" id="vit_talent" value="10" min="3" max="18" onChange="sta_make();"></td>
+        <td><select id="vit_talent" onChange="sta_make();"></select></td>
         <th>VIT成長</th>
-        <td><input type="number" id="vit_grow" value="0" min="0" max="99" onChange="sta_make();"></td>
+        <td><select id="vit_grow" onChange="sta_make();"></select></td>
       </tr>
 
       <tr>
         <th>AGI才能</th>
-        <td><input type="number" id="agi_talent" value="10" min="3" max="18" onChange="sta_make();"></td>
+        <td><select id="agi_talent" onChange="sta_make();"></select></td>
         <th>AGI成長</th>
-        <td><input type="number" id="agi_grow" value="0" min="0" max="99" onChange="sta_make();"></td>
+        <td><select id="agi_grow" onChange="sta_make();"></select></td>
       </tr>
 
       <tr>
         <th>LUC才能</th>
-        <td><input type="number" id="luc_talent" value="10" id="" min="3" max="18" onChange="sta_make();"></td>
+        <td><select id="luc_talent" onChange="sta_make();"></select></td>
         <th>LUC成長</th>
-        <td><input type="number" id="luc_grow" value="0" id="" min="0" max="99" onChange="sta_make();"></td>
+        <td><select id="luc_grow" onChange="sta_make();"></select></td>
       </tr>
 
       <tr>
@@ -80,7 +85,9 @@
         <td><select id="weapon_list" onChange="sta_make();"></td>
         </select>
         <th>武器ランク</th>
-        <td><input type="number" id="weapon_rank" value="1" min="1" max="99" onChange="sta_make();"></td>
+        <td>
+        <select id="weapon_rank" onChange="sta_make();">
+        </select></td>
       </tr>
 
       <tr>
@@ -92,7 +99,9 @@
             <option value="重鎧">重鎧</option>
           </select></td>
         <th>防具ランク</th>
-        <td><input type="number" id="armor_rank" value="1" min="1" max="99" onChange="sta_make();"></td>
+        <td>
+        <select id="armor_rank" onChange="sta_make();">
+        </select></td>
       </tr>
 
       <tr>
@@ -101,7 +110,9 @@
             <option value="－">－</option>
           </select></td>
         <th>盾用ランク</th>
-        <td><input type="number" id="other_rank" value="1" min="1" max="99" onChange="sta_make();"></td>
+        <td>
+        <select id="other_rank" onChange="sta_make();">
+        </select></td>
       </tr>
 
       <tr>
@@ -159,7 +170,9 @@
     <!-- スクリプトの実行  -->
     <script src=chara_make.js></script>
     <script src="main.js"></script>
-    <script>sta_make();</script>
+    <script>
+      sta_make();
+    </script>
   </div>
 </body>
 
