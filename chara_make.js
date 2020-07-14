@@ -1350,10 +1350,13 @@ let sta_make = () => {
 
   //${変数}　\n改行　``(バッククォート：SHIFT+@キー)
   //let text1=""
-  let p_check = document.getElementById("pallet_check")
+  //フォーススキルの有無
+  let force_word =""
   if (select_sj == "－") {
     force_word = "/★フォース"
   };
+
+  let p_check = document.getElementById("pallet_check")
   if (p_check.checked) {
     /*チェックボックスがTrueなら。(p_check.checked === true)と同じ*/
     text1 = `${error_message}----ダイス----
