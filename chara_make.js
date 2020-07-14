@@ -1351,10 +1351,12 @@ let sta_make = () => {
   //${変数}　\n改行　``(バッククォート：SHIFT+@キー)
   //let text1=""
   let p_check = document.getElementById("pallet_check")
+  if (select_sj == "－") {
+    force_word = "/★フォース"
+  };
   if (p_check.checked) {
     /*チェックボックスがTrueなら。(p_check.checked === true)と同じ*/
-    text1 = `${error_message}【クラス】${select_mj}／${select_sj}
-----ダイス----
+    text1 = `${error_message}----ダイス----
 2D+${atk_hit}　物理命中
 2D+${magi_hit}　属性命中
 ${atk}b6>3　物理攻撃
@@ -1366,9 +1368,10 @@ ${magi}b6>3　属性攻撃　
 2D+${vit_b}　VIT判定
 2D+${agi_b}　AGI判定
 2D+${luc_b}　LUC判定
-${avoid}【回避】
-${def}【防御】
+${avoid}　回避
+${def}　防御
 ----能力値----
+【クラス】${select_mj}／${select_sj}
 【Lv】${level}
 【HP】${hp}
 【TP】${tp}
@@ -1396,7 +1399,7 @@ ${def}【防御】
 【LUC】${luc_total}
 【備考】${other_status[o_list]["効果"]}
 ----その他----
-【スキルポイント】${skill_point} (コモン:1)
+【スキルポイント】${skill_point}/コモン:1${force_word}
 【初期所持金】${init_price}en
 【装備価格】合計：${total_price}en
 【装備価格：武器】武器：${weapon_price}en　
@@ -1421,7 +1424,7 @@ ${def}【防御】
 【LUC判定】2D+${luc_b}
 【備考】${other_status[o_list]["効果"]}
 
-【スキルポイント】${skill_point} (コモン:1)
+【スキルポイント】${skill_point} /コモン:1${force_word}
 【初期所持金】${init_price}en
 【装備価格】合計：${total_price}en
 【装備価格】武器：${weapon_price}en　防具：${armor_price}en　装飾：${other_price}en
