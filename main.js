@@ -230,8 +230,10 @@ let dice_action = () => {
   dice.innerText = `${d01}${d02}${d03}${d04}${d05}`
 };
 
-let copy=()=>{
-  copy1=document.getElementById("textarea1")
+let copy = () => {
+  copy1 = document.getElementById("textarea1")
   copy1.select();
   document.execCommand("copy");
+  /*textareaのコピー
+  https: //fuuno.net/web02/copy/copy.html*/
 };
