@@ -229,3 +229,9 @@ let dice_action = () => {
   var dice = document.getElementById("dice_list");
   dice.innerText = `${d01}${d02}${d03}${d04}${d05}`
 };
+
+let copy=()=>{
+  copy1=document.getElementById("textarea1")
+  copy1.select();
+  document.execCommand("copy");
+};
