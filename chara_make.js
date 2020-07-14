@@ -1292,7 +1292,7 @@ let sta_make = () => {
   if (speed < 0) {
     speed = 0
   }
-  let skill_point=level*3+2
+  let skill_point = level * 3 + 2
 
   let init_price = (100 - (parseInt(str_talent.value) + parseInt(tec_talent.value) + parseInt(vit_talent.value) + parseInt(agi_talent.value) + parseInt(luc_talent.value))) * 10
   let weapon_price = parseInt(weapon_status[w_list]["価格"] +
@@ -1349,7 +1349,62 @@ let sta_make = () => {
   }
 
   //${変数}　\n改行　``(バッククォート：SHIFT+@キー)
-  text1 = `${error_message}【${select_mj}／${select_sj}】
+  //let text1=""
+  let p_check = document.getElementById("pallet_check")
+  if (p_check.checked) {
+    /*チェックボックスがTrueなら。(p_check.checked === true)と同じ*/
+    text1 = `${error_message}【クラス】${select_mj}／${select_sj}
+----ダイス----
+2D+${atk_hit}　物理命中
+2D+${magi_hit}　属性命中
+${atk}b6>3　物理攻撃
+${magi}b6>3　属性攻撃　
+2D+${sick_atk}　抑制攻撃
+2D+${sick_def}　抑制防御
+2D+${str_b}　STR判定
+2D+${tec_b}　TEC判定
+2D+${vit_b}　VIT判定
+2D+${agi_b}　AGI判定
+2D+${luc_b}　LUC判定
+${avoid}【回避】
+${def}【防御】
+----能力値----
+【Lv】${level}
+【HP】${hp}
+【TP】${tp}
+【回避】${avoid}
+【防御】${def}
+【速度】${speed}
+【武器】${w_word}
+【物理命中】${atk_hit}
+【属性命中】${magi_hit}
+【物理攻撃】${atk}
+【属性攻撃】${magi}
+【抑制攻撃】${sick_atk}
+【抑制防御】${sick_def}
+【属性】${weapon_status[w_list]["属性"]}${weapon_forge_status[w_forge1]["属性"]}${weapon_forge_status[w_forge2]["属性"]}
+【射程】${weapon_status[w_list]["射程"]}
+【防具】${a_word}
+【装飾】${o_word}
+【耐性：炎】${fire_resist}
+【耐性：氷】${ice_resist}
+【耐性：雷】${thunder_resist}
+【STR】${str_total}
+【TEC】${tec_total}
+【VIT】${vit_total}
+【AGI】${agi_total}
+【LUC】${luc_total}
+【備考】${other_status[o_list]["効果"]}
+----その他----
+【スキルポイント】${skill_point} (コモン:1)
+【初期所持金】${init_price}en
+【装備価格】合計：${total_price}en
+【装備価格：武器】武器：${weapon_price}en　
+【装備価格：防具】${armor_price}en
+【装備価格：装飾】${other_price}en
+`
+  } else {
+    text1 = `${error_message}【${select_mj}／${select_sj}】
 【STR】${str_total} 【TEC】${tec_total}
 【VIT】${vit_total} 【AGI】${agi_total} 【LUC】${luc_total}
 
@@ -1371,6 +1426,7 @@ let sta_make = () => {
 【装備価格】合計：${total_price}en
 【装備価格】武器：${weapon_price}en　防具：${armor_price}en　装飾：${other_price}en
 `
+  };
 
   //textarea1への挿入処理
   let textarea1 = document.getElementById("textarea1")
@@ -1379,9 +1435,4 @@ let sta_make = () => {
 
   //console.log(slect_mj+"　STR"+nssq_status[slect_mj]["STR"])
   //console.log("STR才能"+select_str_talent.value+"／STR成長"+select_str_grow.value)
-};
-
-let text_out = () => {
-  let textarea1 = document.getElementById("textarea1")
-  textarea1.value = select_main_job //innerHTMLだとtextareaはだめらしい
 };

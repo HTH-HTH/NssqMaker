@@ -8,7 +8,8 @@
 body {
   background-color: #e8ffc9;
   margin: 10px 0px 10px 10px;
-  min-width: 1100px;/*折り返しによるレイアウト崩れ防止*/
+  min-width: 1100px;
+  /*折り返しによるレイアウト崩れ防止*/
   /*zoom: 80%; */
 }
 
@@ -60,6 +61,14 @@ input[type="number"] {
 
 input, select {
   width: 120px;
+}
+
+input[type="checkbox"] {
+  width:15px;
+}
+
+#pallet_word {
+  display: inline;
 }
 
 #copy_button {
